@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Saver BD - Save Lives Through Blood Donation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+        }
+        
+        .gradient-secondary {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 30%, #16213e 70%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-30px) rotate(2deg); opacity: 1; }
+        }
+        
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .neon-glow-red {
+            box-shadow: 
+                0 0 20px rgba(220, 38, 38, 0.6),
+                0 0 40px rgba(220, 38, 38, 0.4),
+                0 0 60px rgba(220, 38, 38, 0.2);
+        }
+        
+        .neon-glow-blue {
+            box-shadow: 
+                0 0 20px rgba(59, 130, 246, 0.6),
+                0 0 40px rgba(59, 130, 246, 0.4),
+                0 0 60px rgba(59, 130, 246, 0.2);
+        }
+        
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-12px) scale(1.02);
+        }
+        
+        .hover-3d {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .hover-3d:hover {
+            transform: translateY(-15px) rotateX(10deg) rotateY(5deg);
+        }
+        
+        .counter-box {
+            animation: slideUp 0.8s ease-out, glow-pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+                text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(220, 38, 38, 0.6);
+                text-shadow: 0 0 20px rgba(220, 38, 38, 0.8);
+            }
+        }
+        
+        .testimonial-card {
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        
+        .testimonial-card:hover::before {
+            left: 100%;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-20px) rotateX(8deg);
+            box-shadow: 0 40px 80px rgba(220, 38, 38, 0.25);
+        }
+        
+        .urgent-banner {
+            background: linear-gradient(90deg, #dc2626, #ef4444, #f87171, #ef4444, #dc2626);
+            background-size: 300% 100%;
+            animation: gradient-shift 4s ease-in-out infinite, scroll-text 30s linear infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes scroll-text {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #dc2626;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-secondary:hover::before {
+            width: 100%;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(220, 38, 38, 0.4);
+            border-color: #ef4444;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+            animation: rotate-border 6s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .feature-card:hover::after {
+            opacity: 1;
+        }
+        
+        @keyframes rotate-border {
+            100% { transform: rotate(360deg); }
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 60px rgba(220, 38, 38, 0.2);
+        }
+        
+        .campaign-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .campaign-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .campaign-card:hover::before {
+            opacity: 1;
+        }
+        
+        .campaign-card:hover {
+            transform: translateY(-20px) rotateY(8deg);
+            box-shadow: 0 40px 80px rgba(220, 38, 38, 0.3);
+        }
+        
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(220, 38, 38, 0.6);
+            border-radius: 50%;
+            animation: float-particle 15s infinite linear;
+        }
+        
+        .particle:nth-child(2) { 
+            background: rgba(59, 130, 246, 0.6);
+            animation-delay: -5s;
+            left: 20%;
+        }
+        
+        .particle:nth-child(3) { 
+            background: rgba(239, 68, 68, 0.6);
+            animation-delay: -10s;
+            left: 40%;
+        }
+        
+        .particle:nth-child(4) { 
+            background: rgba(96, 165, 250, 0.6);
+            animation-delay: -15s;
+            left: 60%;
+        }
+        
+        .particle:nth-child(5) { 
+            background: rgba(248, 113, 113, 0.6);
+            animation-delay: -20s;
+            left: 80%;
+        }
+        
+        @keyframes float-particle {
+            0% { 
+                transform: translateY(100vh) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header-blur {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        .nav-link:hover {
+            color: #ef4444;
+            transform: translateY(-2px);
+            background: rgba(220, 38, 38, 0.1);
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0% { 
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+                transform: scale(1);
+            }
+            70% { 
+                box-shadow: 0 0 0 15px rgba(220, 38, 38, 0);
+                transform: scale(1.05);
+            }
+            100% { 
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+                transform: scale(1);
+            }
+        }
+        
+        .info-section {
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+        }
+        
+        .newsletter-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+            position: relative;
+        }
+        
+        .newsletter-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+        
+        .footer-bg {
+            background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #0a0a0f 100%);
+        }
+        
+        .social-icon {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-8px) scale(1.1);
+        }
+        
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
+    <!-- Floating Particles -->
+    <div class="floating-particles fixed inset-0 pointer-events-none z-0">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Urgent Alert Banner -->
+    <div class="urgent-banner text-white py-3 overflow-hidden relative z-10">
+        <div class="whitespace-nowrap">
+            <span class="inline-block px-8 font-semibold">
+                🚨 জরুরি: ঢাকা মেডিকেল কলেজ হাসপাতালে O- রক্তের প্রয়োজন
+            </span>
+            <span class="inline-block px-8 font-semibold">
+                🩸 A+ রক্ত প্রয়োজন স্কয়ার হাসপাতালে
+            </span>
+            <span class="inline-block px-8 font-semibold">
+                ⚡ জরুরি: অ্যাপোলো হাসপাতালে B+ রক্তের প্রয়োজন
+            </span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-blur sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 neon-glow-red rounded-2xl flex items-center justify-center pulse-glow gradient-primary">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gradient">Life Saver BD</h1>
+                        <p class="text-xs text-gray-400 font-medium">জীবন বাঁচান, আশা দিন</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-2">
+                    <a href="#home" class="nav-link text-white font-medium">Home</a>
+                    <a href="#about" class="nav-link text-white font-medium">About Us</a>
+                    <a href="#contact" class="nav-link text-white font-medium">Contact Us</a>
+                    <a href="#login" class="nav-link text-white font-medium">Login</a>
+                    <a href="#register" class="btn-primary text-white px-8 py-3 rounded-full font-semibold ml-4">
+                        Register
+                    </a>
+                </nav>
+
+                <!-- Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- Language Toggle -->
+                    <button id="langToggle" class="glass-morphism flex items-center space-x-2 px-4 py-2 rounded-full hover-lift">
+                        <span class="text-sm font-semibold text-white" id="currentLang">EN</span>
+                        <i class="fas fa-globe text-sm text-white"></i>
+                    </button>
+
+                    <!-- Dark Mode Toggle -->
+                    <button id="themeToggle" class="glass-morphism p-3 rounded-full hover-lift">
+                        <i class="fas fa-moon text-white"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="lg:hidden glass-morphism p-3 rounded-xl hover-lift">
+                        <i class="fas fa-bars text-white"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="lg:hidden hidden border-t border-white border-opacity-10 py-6">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="nav-link text-white font-medium">Home</a>
+                    <a href="#about" class="nav-link text-white font-medium">About Us</a>
+                    <a href="#contact" class="nav-link text-white font-medium">Contact Us</a>
+                    <a href="#login" class="nav-link text-white font-medium">Login</a>
+                    <a href="#register" class="btn-primary text-white px-8 py-3 rounded-full font-semibold text-center">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="glass-morphism py-16 relative z-10">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8 hover-lift" id="welcomeText">
+                স্বাগতম Life Saver BD-তে! আপনার এক ক্লিকেই জীবন বাঁচাতে পারেন।
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed hover-lift" id="taglineText">
+                Donate blood, save lives. Join our mission for a healthier Bangladesh.
+            </p>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-24 text-white relative">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <h3 class="text-6xl lg:text-7xl font-black mb-10 leading-tight">
+                    <span id="heroTitle" class="text-gradient">Be a Hero Today</span>
+                </h3>
+                <p class="text-2xl mb-16 opacity-90 font-light leading-relaxed" id="heroSubtitle">
+                    Every drop counts. Your donation can save up to 3 lives.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-8 justify-center mb-20">
+                    <button onclick="showLoginPrompt('donate')" class="btn-primary text-white px-12 py-5 rounded-full text-xl font-bold neon-glow-red">
+                        <i class="fas fa-heart mr-4"></i>
+                        <span id="donateBtn">Donate Blood</span>
+                    </button>
+                    <button onclick="showLoginPrompt('request')" class="btn-secondary px-12 py-5 rounded-full text-xl font-bold">
+                        <i class="fas fa-hand-holding-heart mr-4"></i>
+                        <span id="requestBtn">Request Blood</span>
+                    </button>
+                </div>
+
+                <!-- Animated Counters -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="counter-box glass-card rounded-3xl p-8">
+                        <div class="text-5xl font-black mb-4 text-gradient" id="donorCount">5,247</div>
+                        <div class="text-lg font-medium opacity-80" id="donorLabel">Live Donors</div>
+                    </div>
+                    <div class="counter-box glass-card rounded-3xl p-8">
+                        <div class="text-5xl font-black mb-4 text-gradient" id="livesCount">12,891</div>
+                        <div class="text-lg font-medium opacity-80" id="livesLabel">Lives Saved</div>
+                    </div>
+                    <div class="counter-box glass-card rounded-3xl p-8">
+                        <div class="text-5xl font-black mb-4 text-gradient" id="campaignCount">342</div>
+                        <div class="text-lg font-medium opacity-80" id="campaignLabel">Campaigns Held</div>
+                    </div>
+                    <div class="counter-box glass-card rounded-3xl p-8">
+                        <div class="text-5xl font-black mb-4 text-gradient" id="unitsCount">1,856</div>
+                        <div class="text-lg font-medium opacity-80" id="unitsLabel">Units Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section (Testimonials) -->
+    <section class="py-24 relative z-10">
+        <div class="container mx-auto px-6">
+            <h3 class="text-5xl font-bold text-center text-white mb-20 text-gradient" id="testimonialTitle">
+                Real Stories, Real Impact
+            </h3>
+            
+            <div class="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+                <!-- Receiver Testimonial -->
+                <div class="testimonial-card glass-card p-10 rounded-3xl hover-3d">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-24 h-24 neon-glow-blue rounded-2xl flex items-center justify-center flex-shrink-0 gradient-secondary">
+                            <i class="fas fa-user-heart text-white text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400 mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-white mb-8 italic text-xl leading-relaxed font-light" id="receiverMessage">
+                                "Thanks to Life Saver BD, I received blood on time and got a new chance at life!"
+                            </p>
+                            <div class="border-t border-white border-opacity-20 pt-6">
+                                <div class="font-bold text-white text-lg">Rashida Begum</div>
+                                <div class="text-gray-400 font-medium">Blood Recipient • Dhaka, Bangladesh</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donor Testimonial -->
+                <div class="testimonial-card glass-card p-10 rounded-3xl hover-3d">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-24 h-24 neon-glow-red rounded-2xl flex items-center justify-center flex-shrink-0 gradient-primary">
+                            <i class="fas fa-hand-holding-heart text-white text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400 mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-white mb-8 italic text-xl leading-relaxed font-light" id="donorMessage">
+                                "Giving blood is giving hope. Proud to be a Life Saver!"
+                            </p>
+                            <div class="border-t border-white border-opacity-20 pt-6">
+                                <div class="font-bold text-white text-lg">Mohammad Rahman</div>
+                                <div class="text-gray-400 font-medium">15 donations • Chittagong</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaigns & Gallery Section -->
+    <section class="py-24 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h3 class="text-5xl font-bold text-white mb-8 text-gradient" id="campaignSectionTitle">
+                    Upcoming Blood Donation Campaigns
+                </h3>
+                <p class="text-gray-300 text-xl font-light max-w-2xl mx-auto" id="campaignSubtitle">
+                    Join our community events and make a difference
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-10 mb-12">
+                <div class="campaign-card rounded-3xl overflow-hidden hover-3d">
+                    <div class="h-64 gradient-primary flex items-center justify-center relative">
+                        <i class="fas fa-calendar-alt text-white text-6xl"></i>
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="absolute top-4 right-4 bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2">
+                            <span class="text-white font-bold text-sm">Dec 28</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="font-bold text-2xl mb-4 text-white">Dhaka University Campaign</h4>
+                        <div class="flex items-center text-gray-400 text-sm mb-4">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>December 28, 2024 • 9:00 AM - 5:00 PM</span>
+                        </div>
+                        <p class="text-gray-300 mb-8 leading-relaxed">Join us at DU campus for our biggest blood donation drive of the year.</p>
+                        <button onclick="showLoginPrompt('campaign')" class="w-full btn-primary py-4 rounded-2xl font-bold text-lg">
+                            Join Campaign
+                        </button>
+                    </div>
+                </div>
+
+                <div class="campaign-card rounded-3xl overflow-hidden hover-3d">
+                    <div class="h-64 gradient-secondary flex items-center justify-center relative">
+                        <i class="fas fa-hospital text-white text-6xl"></i>
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="absolute top-4 right-4 bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2">
+                            <span class="text-white font-bold text-sm">Jan 5</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="font-bold text-2xl mb-4 text-white">Square Hospital Drive</h4>
+                        <div class="flex items-center text-gray-400 text-sm mb-4">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>January 5, 2025 • 10:00 AM - 4:00 PM</span>
+                        </div>
+                        <p class="text-gray-300 mb-8 leading-relaxed">Partner with Square Hospital to help patients in need.</p>
+                        <button onclick="showLoginPrompt('campaign')" class="w-full btn-primary py-4 rounded-2xl font-bold text-lg">
+                            Join Campaign
+                        </button>
+                    </div>
+                </div>
+
+                <div class="campaign-card rounded-3xl overflow-hidden hover-3d">
+                    <div class="h-64 bg-gradient-to-br from-green-600 to-emerald-600 flex items-center justify-center relative">
+                        <i class="fas fa-users text-white text-6xl"></i>
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="absolute top-4 right-4 bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2">
+                            <span class="text-white font-bold text-sm">Jan 12</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="font-bold text-2xl mb-4 text-white">Community Center Drive</h4>
+                        <div class="flex items-center text-gray-400 text-sm mb-4">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>January 12, 2025 • 8:00 AM - 6:00 PM</span>
+                        </div>
+                        <p class="text-gray-300 mb-8 leading-relaxed">Neighborhood blood drive at Gulshan Community Center.</p>
+                        <button onclick="showLoginPrompt('campaign')" class="w-full btn-primary py-4 rounded-2xl font-bold text-lg">
+                            Join Campaign
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Key Features -->
+    <section class="py-24 relative z-10">
+        <div class="container mx-auto px-6">
+            <h3 class="text-5xl font-bold text-center text-white mb-20 text-gradient" id="featuresTitle">
+                Why Choose Life Saver BD?
+            </h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+                <div class="feature-card text-center p-8 rounded-3xl hover-lift">
+                    <div class="w-24 h-24 neon-glow-red rounded-2xl flex items-center justify-center mx-auto mb-8 gradient-primary">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-4 text-white text-xl" id="feature1Title">Automated Matching</h4>
+                    <p class="text-gray-300 leading-relaxed" id="feature1Desc">Smart algorithm matches donors with recipients instantly</p>
+                </div>
+
+                <div class="feature-card text-center p-8 rounded-3xl hover-lift">
+                    <div class="w-24 h-24 neon-glow-blue rounded-2xl flex items-center justify-center mx-auto mb-8 gradient-secondary">
+                        <i class="fas fa-bolt text-white text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-4 text-white text-xl" id="feature2Title">Secure & Fast</h4>
+                    <p class="text-gray-300 leading-relaxed" id="feature2Desc">Quick and secure blood requests with real-time updates</p>
+                </div>
+
+                <div class="feature-card text-center p-8 rounded-3xl hover-lift">
+                    <div class="w-24 h-24 neon-glow-red rounded-2xl flex items-center justify-center mx-auto mb-8 bg-gradient-to-br from-green-600 to-emerald-600">
+                        <i class="fas fa-chart-line text-white text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-4 text-white text-xl" id="feature3Title">Real-Time Inventory</h4>
+                    <p class="text-gray-300 leading-relaxed" id="feature3Desc">Live tracking of blood availability across Bangladesh</p>
+                </div>
+
+                <div class="feature-card text-center p-8 rounded-3xl hover-lift">
+                    <div class="w-24 h-24 neon-glow-blue rounded-2xl flex items-center justify-center mx-auto mb-8 bg-gradient-to-br from-purple-600 to-violet-600">
+                        <i class="fas fa-language text-white text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-4 text-white text-xl" id="feature4Title">Multi-language</h4>
+                    <p class="text-gray-300 leading-relaxed" id="feature4Desc">Available in Bengali and English for everyone</p>
+                </div>
+
+                <div class="feature-card text-center p-8 rounded-3xl hover-lift">
+                    <div class="w-24 h-24 neon-glow-red rounded-2xl flex items-center justify-center mx-auto mb-8 bg-gradient-to-br from-amber-600 to-orange-600">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-4 text-white text-xl" id="feature5Title">Privacy & Safety</h4>
+                    <p class="text-gray-300 leading-relaxed" id="feature5Desc">Your data is protected with highest security standards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Highlights Section -->
+    <section class="info-section py-24 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Blood Donation Tips -->
+                <div class="glass-card rounded-3xl p-12 hover-lift">
+                    <h4 class="text-4xl font-bold text-white mb-10 text-gradient" id="tipsTitle">
+                        Blood Donation Tips
+                    </h4>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 neon-glow-red rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-green-600 to-emerald-600">
+                                <i class="fas fa-check-circle text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white text-xl mb-3">Eligibility</h5>
+                                <p class="text-gray-300 leading-relaxed text-lg">Age 18-65, weight 50kg+, healthy condition</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 neon-glow-red rounded-2xl flex items-center justify-center flex-shrink-0 gradient-primary">
+                                <i class="fas fa-heart text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white text-xl mb-3">Health Benefits</h5>
+                                <p class="text-gray-300 leading-relaxed text-lg">Reduces iron overload, burns calories, free health checkup</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 neon-glow-blue rounded-2xl flex items-center justify-center flex-shrink-0 gradient-secondary">
+                                <i class="fas fa-info-circle text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white text-xl mb-3">Myth Buster</h5>
+                                <p class="text-gray-300 leading-relaxed text-lg">Donating blood doesn't make you weak or sick</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How It Works -->
+                <div class="glass-card rounded-3xl p-12 hover-lift">
+                    <h4 class="text-4xl font-bold text-white mb-10 text-gradient" id="howItWorksTitle">
+                        How It Works
+                    </h4>
+                    <div class="space-y-10">
+                        <div class="flex items-center space-x-8">
+                            <div class="w-18 h-18 neon-glow-red rounded-2xl flex items-center justify-center font-black text-white text-2xl gradient-primary">1</div>
+                            <div>
+                                <h5 class="font-bold text-white text-xl mb-3">Register</h5>
+                                <p class="text-gray-300 leading-relaxed text-lg">Create your account with basic information</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-8">
+                            <div class="w-18 h-18 neon-glow-red rounded-2xl flex items-center justify-center font-black text-white text-2xl gradient-primary">2</div>
+                            <div>
+                                <h5 class="font-bold text-white text-xl mb-3">Match</h5>
+                                <p class="text-gray-300 leading-relaxed text-lg">Get matched with donors or recipients nearby</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-8">
+                            <div class="w-18 h-18 neon-glow-red rounded-2xl flex items-center justify-center font-black text-white text-2xl gradient-primary">3</div>
+                            <div>
+                                <h5 class="font-bold text-white text-xl mb-3">Donate/Request</h5>
+                                <p class="text-gray-300 leading-relaxed text-lg">Complete the donation or request process</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-8">
+                            <div class="w-18 h-18 neon-glow-red rounded-2xl flex items-center justify-center font-black text-white text-2xl gradient-primary">4</div>
+                            <div>
+                                <h5 class="font-bold text-white text-xl mb-3">Save Lives</h5>
+                                <p class="text-gray-300 leading-relaxed text-lg">Make a difference in someone's life</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-bg py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h4 class="text-4xl font-bold mb-8 text-white" id="newsletterTitle">
+                Stay Updated
+            </h4>
+            <p class="mb-12 text-xl text-white opacity-90 font-light max-w-2xl mx-auto" id="newsletterDesc">
+                Get updates on blood camps and urgent needs
+            </p>
+            <div class="max-w-2xl mx-auto flex flex-col sm:flex-row gap-6">
+                <input type="email" placeholder="Enter your email address" class="flex-1 px-8 py-5 rounded-2xl text-gray-800 glass-morphism border-0 focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-30 text-lg">
+                <button class="bg-white text-red-600 px-10 py-5 rounded-2xl font-bold hover-lift neon-glow-red text-lg">
+                    Subscribe Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-bg text-white py-20 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Logo & Description -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="w-16 h-16 neon-glow-red rounded-2xl flex items-center justify-center pulse-glow gradient-primary">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gradient">Life Saver BD</h3>
+                            <p class="text-sm text-gray-400 font-medium">জীবন বাঁচান, আশা দিন</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-lg mb-8">
+                        Connecting blood donors with those in need across Bangladesh. Together, we save lives.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon w-14 h-14 glass-morphism rounded-2xl flex items-center justify-center neon-glow-blue">
+                            <i class="fab fa-facebook-f text-blue-400 text-xl"></i>
+                        </a>
+                        <a href="#" class="social-icon w-14 h-14 glass-morphism rounded-2xl flex items-center justify-center neon-glow-blue">
+                            <i class="fab fa-twitter text-blue-300 text-xl"></i>
+                        </a>
+                        <a href="#" class="social-icon w-14 h-14 glass-morphism rounded-2xl flex items-center justify-center neon-glow-red">
+                            <i class="fab fa-instagram text-pink-400 text-xl"></i>
+                        </a>
+                        <a href="#" class="social-icon w-14 h-14 glass-morphism rounded-2xl flex items-center justify-center neon-glow-blue">
+                            <i class="fab fa-linkedin-in text-blue-500 text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold mb-8 text-xl text-white">Quick Links</h4>
+                    <div class="space-y-4">
+                        <a href="#home" class="block text-gray-300 hover:text-white transition-all hover:translate-x-2 text-lg">Home</a>
+                        <a href="#about" class="block text-gray-300 hover:text-white transition-all hover:translate-x-2 text-lg">About Us</a>
+                        <a href="#contact" class="block text-gray-300 hover:text-white transition-all hover:translate-x-2 text-lg">Contact Us</a>
+                        <a href="#faq" class="block text-gray-300 hover:text-white transition-all hover:translate-x-2 text-lg">FAQ</a>
+                        <a href="#privacy" class="block text-gray-300 hover:text-white transition-all hover:translate-x-2 text-lg">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold mb-8 text-xl text-white">Contact Info</h4>
+                    <div class="space-y-6 text-gray-300">
+                        <div class="flex items-center space-x-4 hover:text-white transition-colors">
+                            <div class="w-12 h-12 glass-morphism rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </div>
+                            <span class="text-lg">info@lifesaverbd.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4 hover:text-white transition-colors">
+                            <div class="w-12 h-12 glass-morphism rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-phone text-lg"></i>
+                            </div>
+                            <span class="text-lg">+880 1700-000000</span>
+                        </div>
+                        <div class="flex items-center space-x-4 hover:text-white transition-colors">
+                            <div class="w-12 h-12 glass-morphism rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-lg"></i>
+                            </div>
+                            <span class="text-lg">Dhaka, Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Preview -->
+                <div>
+                    <h4 class="font-bold mb-8 text-xl text-white">FAQ Preview</h4>
+                    <div class="space-y-6">
+                        <div class="glass-morphism p-4 rounded-2xl">
+                            <h5 class="font-semibold text-white mb-2">Who can donate blood?</h5>
+                            <p class="text-gray-300 text-sm">Healthy individuals aged 18-65...</p>
+                        </div>
+                        <div class="glass-morphism p-4 rounded-2xl">
+                            <h5 class="font-semibold text-white mb-2">Is it safe to donate?</h5>
+                            <p class="text-gray-300 text-sm">Yes, completely safe with sterile...</p>
+                        </div>
+                        <a href="#faq" class="inline-flex items-center text-red-400 hover:text-red-300 font-semibold">
+                            View All FAQ <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white border-opacity-20 pt-8 text-center">
+                <p class="text-xl text-gray-300">
+                    &copy; 2025 Life Saver BD | Powered by Life Saver BD Team
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Prompt Modal -->
+    <div id="loginModal" class="fixed inset-0 modal-backdrop hidden items-center justify-center z-50">
+        <div class="glass-card rounded-3xl p-12 max-w-lg mx-4 hover-lift">
+            <div class="text-center">
+                <div class="w-24 h-24 neon-glow-red rounded-2xl flex items-center justify-center mx-auto mb-8 gradient-primary">
+                    <i class="fas fa-user-plus text-white text-4xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-white mb-8">Join Life Saver BD</h3>
+                <p class="text-gray-300 mb-10 leading-relaxed text-lg" id="modalMessage">
+                    Please login or register to continue with blood donation.
+                </p>
+                <div class="flex gap-6">
+                    <button onclick="closeModal()" class="flex-1 px-8 py-4 btn-secondary rounded-2xl font-bold text-lg">
+                        Cancel
+                    </button>
+                    <button onclick="redirectToLogin()" class="flex-1 px-8 py-4 btn-primary rounded-2xl font-bold text-lg">
+                        Login / Register
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scrollIndicator').style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Language Toggle
+        let currentLanguage = 'en';
+        const translations = {
+            en: {
+                welcomeText: "Welcome to Life Saver BD! You can save lives with just one click.",
+                taglineText: "Donate blood, save lives. Join our mission for a healthier Bangladesh.",
+                heroTitle: "Be a Hero Today",
+                heroSubtitle: "Every drop counts. Your donation can save up to 3 lives.",
+                donateBtn: "Donate Blood",
+                requestBtn: "Request Blood",
+                donorLabel: "Live Donors",
+                livesLabel: "Lives Saved",
+                campaignLabel: "Campaigns Held",
+                unitsLabel: "Units Available",
+                testimonialTitle: "Real Stories, Real Impact",
+                receiverMessage: "Thanks to Life Saver BD, I received blood on time and got a new chance at life!",
+                donorMessage: "Giving blood is giving hope. Proud to be a Life Saver!",
+                campaignSectionTitle: "Upcoming Blood Donation Campaigns",
+                campaignSubtitle: "Join our community events and make a difference",
+                featuresTitle: "Why Choose Life Saver BD?",
+                feature1Title: "Automated Matching",
+                feature1Desc: "Smart algorithm matches donors with recipients instantly",
+                feature2Title: "Secure & Fast",
+                feature2Desc: "Quick and secure blood requests with real-time updates",
+                feature3Title: "Real-Time Inventory",
+                feature3Desc: "Live tracking of blood availability across Bangladesh",
+                feature4Title: "Multi-language",
+                feature4Desc: "Available in Bengali and English for everyone",
+                feature5Title: "Privacy & Safety",
+                feature5Desc: "Your data is protected with highest security standards",
+                tipsTitle: "Blood Donation Tips",
+                howItWorksTitle: "How It Works",
+                newsletterTitle: "Stay Updated",
+                newsletterDesc: "Get updates on blood camps and urgent needs"
+            },
+            bn: {
+                welcomeText: "স্বাগতম Life Saver BD-তে! আপনার এক ক্লিকেই জীবন বাঁচাতে পারেন।",
+                taglineText: "রক্তদান করুন, জীবন বাঁচান। একটি সুস্থ বাংলাদেশের জন্য আমাদের মিশনে যোগ দিন।",
+                heroTitle: "আজই একজন বীর হন",
+                heroSubtitle: "প্রতিটি ফোঁটা গুরুত্বপূর্ণ। আপনার দান ৩টি জীবন বাঁচাতে পারে।",
+                donateBtn: "রক্তদান করুন",
+                requestBtn: "রক্তের জন্য অনুরোধ",
+                donorLabel: "সক্রিয় দাতা",
+                livesLabel: "জীবন রক্ষা",
+                campaignLabel: "ক্যাম্পেইন সম্পন্ন",
+                unitsLabel: "ইউনিট উপলব্ধ",
+                testimonialTitle: "বাস্তব গল্প, বাস্তব প্রভাব",
+                receiverMessage: "Life Saver BD-র কারণে আমি সময়মতো রক্ত পেয়েছি এবং নতুন জীবন পেয়েছি!",
+                donorMessage: "রক্তদান মানে আশা দেওয়া। Life Saver হতে পেরে গর্বিত!",
+                campaignSectionTitle: "আসন্ন রক্তদান ক্যাম্পেইন",
+                campaignSubtitle: "আমাদের কমিউনিটি ইভেন্টে যোগ দিন এবং পরিবর্তন আনুন",
+                featuresTitle: "কেন Life Saver BD বেছে নেবেন?",
+                feature1Title: "স্বয়ংক্রিয় ম্যাচিং",
+                feature1Desc: "স্মার্ট অ্যালগরিদম তাৎক্ষণিকভাবে দাতা ও গ্রহীতাকে মিলিয়ে দেয়",
+                feature2Title: "নিরাপদ ও দ্রুত",
+                feature2Desc: "রিয়েল-টাইম আপডেটসহ দ্রুত ও নিরাপদ রক্তের অনুরোধ",
+                feature3Title: "রিয়েল-টাইম তালিকা",
+                feature3Desc: "সারা বাংলাদেশে রক্তের প্রাপ্যতার লাইভ ট্র্যাকিং",
+                feature4Title: "বহুভাষিক",
+                feature4Desc: "সবার জন্য বাংলা ও ইংরেজিতে উপলব্ধ",
+                feature5Title: "গোপনীয়তা ও নিরাপত্তা",
+                feature5Desc: "আপনার ডেটা সর্বোচ্চ নিরাপত্তা মানদণ্ডে সুরক্ষিত",
+                tipsTitle: "রক্তদানের টিপস",
+                howItWorksTitle: "এটি কীভাবে কাজ করে",
+                newsletterTitle: "আপডেট থাকুন",
+                newsletterDesc: "রক্তদান ক্যাম্প ও জরুরি প্রয়োজনের আপডেট পান"
+            }
+        };
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'bn' : 'en';
+            document.getElementById('currentLang').textContent = currentLanguage.toUpperCase();
+            
+            const texts = translations[currentLanguage];
+            Object.keys(texts).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = texts[key];
+                }
+            });
+        }
+
+        document.getElementById('langToggle').addEventListener('click', toggleLanguage);
+
+        // Dark Mode Toggle (Already dark, but can toggle to lighter dark)
+        function toggleTheme() {
+            document.body.classList.toggle('lighter-dark');
+            const icon = document.querySelector('#themeToggle i');
+            if (document.body.classList.contains('lighter-dark')) {
+                icon.className = 'fas fa-sun text-yellow-400';
+                document.body.style.background = '#1a1a2e';
+            } else {
+                icon.className = 'fas fa-moon text-white';
+                document.body.style.background = '#0a0a0f';
+            }
+        }
+
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Login Prompt Modal
+        function showLoginPrompt(action) {
+            const modal = document.getElementById('loginModal');
+            const message = document.getElementById('modalMessage');
+            
+            const messages = {
+                donate: 'Please login or register to continue with blood donation.',
+                request: 'Please login or register to request blood.',
+                campaign: 'Please login or register to join our campaigns.'
+            };
+            
+            message.textContent = messages[action] || messages.donate;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('loginModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function redirectToLogin() {
+            alert('Redirecting to login/register page...');
+            closeModal();
+        }
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = [
+                { id: 'donorCount', target: 5247 },
+                { id: 'livesCount', target: 12891 },
+                { id: 'campaignCount', target: 342 },
+                { id: 'unitsCount', target: 1856 }
+            ];
+
+            counters.forEach(counter => {
+                const element = document.getElementById(counter.id);
+                let current = 0;
+                const increment = counter.target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= counter.target) {
+                        element.textContent = counter.target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 30);
+            });
+        }
+
+        // Trigger counter animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(animateCounters, 1500);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('loginModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97abd69275e3ded3',t:'MTc1NzEzOTM5Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
